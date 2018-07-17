@@ -25,9 +25,9 @@ export class ApiService {
             'Accept': 'application/json'
         };
 
-        if ( this.jwtService.getToken() ) {
+        /*if ( this.jwtService.getToken() ) {
             headersConfig[ 'Authorization' ] = `Bearer ${this.jwtService.getToken()}`;
-        }
+        }*/
 
         return new HttpHeaders( headersConfig );
     }
@@ -62,10 +62,10 @@ export class ApiService {
             }
         ).pipe(
             map( ( response: Response ) => {
-                response.json();
+                return response;
             } ),
             tap( ( tabObj ) => {
-
+                this.log('fetched');
             } ),
             catchError( this.handleError( 'message', [] ) )
         );
@@ -84,10 +84,10 @@ export class ApiService {
             }
         ).pipe(
             map( ( response: Response ) => {
-                response.json();
+                return response;
             } ),
             tap( ( tabObj ) => {
-
+                this.log('fetched');
             } ),
             catchError( this.handleError( 'message', [] ) )
         );
@@ -107,10 +107,10 @@ export class ApiService {
             }
         ).pipe(
             map( ( response: Response ) => {
-                response.json();
+                return response;
             } ),
             tap( ( tabObj ) => {
-
+                this.log('fetched');
             } ),
             catchError( this.handleError( 'message', [] ) )
         );
@@ -129,10 +129,10 @@ export class ApiService {
             }
         ).pipe(
             map( ( response: Response ) => {
-                response.json();
+                return response;
             } ),
             tap( ( tabObj ) => {
-
+                this.log('fetched');
             } ),
             catchError( this.handleError( 'message', [] ) )
         );
@@ -151,10 +151,10 @@ export class ApiService {
             }
         ).pipe(
             map( ( response: Response ) => {
-
+                return response;
             } ),
             tap( ( tabObj ) => {
-
+                this.log('fetched');
             } ),
             catchError( this.handleError( 'message', [] ) )
         );
@@ -172,10 +172,10 @@ export class ApiService {
             }
         ).pipe(
             map( ( response: Response ) => {
-                response.json();
+                return response;
             } ),
             tap( ( tabObj ) => {
-
+                this.log('fetched');
             } ),
             catchError( this.handleError( 'message', [] ) )
         );
